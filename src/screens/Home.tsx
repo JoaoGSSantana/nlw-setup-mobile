@@ -26,7 +26,7 @@ export function Home() {
                     </Text>)
                 }
             </View>
-            <ScrollView  showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100}}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
                 <View className="flex-row flex-wrap">
                     {
                         datesFromYearStart.map((date) => (<HabitDay key={date.toISOString()} />))
@@ -34,6 +34,7 @@ export function Home() {
                     {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, index) => {
                         return (
                             <View
+                                key={index}
                                 className="bg-zinc-900 rounded-lg border-2 m-1 border-zinc-800 opacity-40"
                                 style={{ height: DAY_SIZE, width: DAY_SIZE }}
                             />
